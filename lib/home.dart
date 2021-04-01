@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internetcheck/provider/connectivity_provider.dart';
 import 'package:internetcheck/ui/no_internet.dart';
+import 'package:internetcheck/ui/second.dart';
 import 'package:provider/provider.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,12 +15,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   void initState() {
@@ -36,7 +31,13 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: pageUI(),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          setState(() {
+            _counter++;
+          });
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Second()));
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),

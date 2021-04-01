@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internetcheck/ui/second.dart';
 
 class NoInternet extends StatelessWidget {
   @override
@@ -24,6 +25,21 @@ class NoInternet extends StatelessWidget {
             style: new TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
             overflow: TextOverflow.fade,
           ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Second()));
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: new Text(
+                "Go to Next Page",
+                style:
+                    new TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                overflow: TextOverflow.fade,
+              ),
+            ),
+          )
         ],
       ),
     );
